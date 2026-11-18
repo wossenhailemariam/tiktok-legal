@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Connecting…</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+<h1>Connecting…</h1>
+<p class="meta">Taking you back to the app. If nothing happens, make sure the app is running on this computer, then <a id="go" href="#">click here</a>.</p>
+</main>
+<script>
+  // TikTok only allows https redirect addresses; the app runs locally. Forward the login result
+  // (code/state/error in the query string) to the local app. The destination is fixed — never taken from the URL.
+  var dest = "http://localhost:8765/api/post/oauth/tiktok/callback" + location.search;
+  document.getElementById("go").href = dest;
+  location.replace(dest);
+</script>
+</body>
+</html>
