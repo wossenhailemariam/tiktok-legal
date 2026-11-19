@@ -15,7 +15,7 @@
 <script>
   // TikTok only allows https redirect addresses; the app runs locally. Forward the login result
   // (code/state/error in the query string) to the local app. The destination is fixed — never taken from the URL.
-  var dest = "http://localhost:8765/api/post/oauth/tiktok/callback" + location.search;
+  var dest = "http://127.0.0.1:8765/api/post/oauth/tiktok/callback" + location.search;
   document.getElementById("go").href = dest;
   location.replace(dest);
 </script>
